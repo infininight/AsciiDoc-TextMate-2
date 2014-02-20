@@ -8,6 +8,53 @@
 	<string>Matt Neuburg</string>
 	<key>description</key>
 	<string>&lt;strong&gt;&lt;/strong&gt;New shiny bundle for X.</string>
+	<key>mainMenu</key>
+	<dict>
+		<key>items</key>
+		<array>
+			<string>7D5F0932-997C-4C74-9319-95A26BA645EF</string>
+			<string>A3B1C275-6646-471E-B032-FAEFEEF68FC8</string>
+			<string>------------------------------------</string>
+			<string>50FC7AF5-D131-47BC-AB8F-1D16BAF9AE73</string>
+			<string>9141D9BD-FEC6-4408-B458-A56F6282210B</string>
+			<string>------------------------------------</string>
+			<string>FFB3AF0D-DF61-4FC4-90C8-EE216033B5B8</string>
+			<string>5BC14415-F7BC-40B2-9014-C35C62B7FB08</string>
+			<string>4366495F-77A2-4E9B-8966-85AA7185AF9A</string>
+			<string>8B948AA5-1C9F-4083-B874-1B89A069F3DC</string>
+		</array>
+		<key>submenus</key>
+		<dict>
+			<key>50FC7AF5-D131-47BC-AB8F-1D16BAF9AE73</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>43C59A8A-8922-4E52-A93E-0416022A5F48</string>
+					<string>ABC8688A-89E0-4FEB-9490-9EF49A69DC3D</string>
+					<string>24F2B564-B995-45F4-892C-64D228492DAA</string>
+					<string>DCE8ADEC-5021-4AE0-8E08-F0350C2E3189</string>
+					<string>FB687DFA-647D-45EE-B3BF-9AE8EABB55D7</string>
+				</array>
+				<key>name</key>
+				<string>Inline</string>
+			</dict>
+			<key>9141D9BD-FEC6-4408-B458-A56F6282210B</key>
+			<dict>
+				<key>items</key>
+				<array>
+					<string>3113A96B-0D44-4073-90BC-69F81ACF6B8E</string>
+					<string>73A58AA7-17DE-4D7C-8809-CF1E060D475F</string>
+					<string>C3D609A5-368D-48BD-ACF6-918F136CC209</string>
+					<string>7FF26494-8C20-4665-9213-0957645859A0</string>
+					<string>7D57542C-56C5-44BE-8D53-F52FD62DD5EA</string>
+					<string>944A21B8-C8B1-4A72-AA09-65D89F871259</string>
+					<string>559A32BB-F3D5-4BAA-BCE8-D1DC6444EDCB</string>
+				</array>
+				<key>name</key>
+				<string>Blocks</string>
+			</dict>
+		</dict>
+	</dict>
 	<key>name</key>
 	<string>AsciiDocTM2</string>
 	<key>uuid</key>
