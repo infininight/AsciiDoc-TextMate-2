@@ -4,9 +4,9 @@
 <dict>
 	<key>content</key>
 	<string>
-/////
+////
 $1
-//// 
+////
 $0
 </string>
 	<key>disableAutoIndent</key>
