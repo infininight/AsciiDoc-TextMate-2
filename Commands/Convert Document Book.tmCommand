@@ -15,8 +15,7 @@ fbase = File.basename(f, File.extname(f))
 f2 = ENV['HOME'] + '/Desktop/asciidocOutput/'
 FileUtils.mkdir(f2) unless File.exist?(f2)
 f2 = f2 + fbase + '.html'
-ad = ENV["TM_ASCIIDOC"] || '/usr/local/bin/asciidoc'
-s = %{#{ad} --verbose -d book -a stylesheet=stylesheets/extra.css -a quirks! -a data-uri -o "#{f2}" }
+s = %{"#{ENV["TM_ASCIIDOC"]}" --verbose -d book -a stylesheet=stylesheets/extra.css -a quirks! -a data-uri -o "#{f2}" }
 s = s + %{"#{f}"}
 
 =begin
@@ -53,6 +52,20 @@ TextMate::Executor.run(*a, :use_hashbang =&gt; false, :verb =&gt; "Converting")
 	<string>html</string>
 	<key>outputLocation</key>
 	<string>newWindow</string>
+	<key>requiredCommands</key>
+	<array>
+		<dict>
+			<key>command</key>
+			<string>asciidoc</string>
+			<key>locations</key>
+			<array>
+				<string>/opt/local/bin/asciidoc</string>
+				<string>/usr/local/bin/asciidoc</string>
+			</array>
+			<key>variable</key>
+			<string>TM_ASCIIDOC</string>
+		</dict>
+	</array>
 	<key>scope</key>
 	<string>text.asciidoc</string>
 	<key>uuid</key>
