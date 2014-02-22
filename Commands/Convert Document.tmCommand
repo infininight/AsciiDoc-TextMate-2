@@ -17,9 +17,7 @@ fbase = File.basename(f, File.extname(f))
 f2 = ENV['HOME'] + '/Desktop/asciidocOutput/'
 FileUtils.mkdir(f2) unless File.exist?(f2)
 f2 = f2 + fbase + '.html'
-ad = '/usr/local/bin/asciidoc'
-# blap - let's use cutting edge instead
-# ad = ENV['HOME'] + '/asciidocCuttingEdge/asciidoc/asciidoc.py'
+ad = ENV["TM_ASCIIDOC"] || '/usr/local/bin/asciidoc'
 s = %{#{ad} --verbose -a stylesheet=stylesheets/extra.css -a quirks! -a data-uri -o "#{f2}" }
 s = s + %{"#{f}"}
 
