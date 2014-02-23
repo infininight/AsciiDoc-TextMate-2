@@ -41,8 +41,6 @@ I have tried to make the "grammar" (which visibly styles the syntactically signi
 
 * **Single-quoted strings** (single backtick on the left, single apostrophe on the right) are _not coded for at all_. You can use them, of course, but I don't mark them up. AsciiDoc itself is already incoherent in this regard, especially when single-quoted and double-quoted strings appear in the same paragraph, and it just isn't a complication I want to get into. In my own writing, I explicitly surround single-quoted strings with curly quotes (‘like this’), and these are a smart typing pair, so it shouldn't be a big deal.
 
-* **Sidebar blocks** work like comment blocks (see previous paragraph): they can be folded, if the opening delimiter is exactly five asterisks (`*`) and the closing delimiter is exactly four asterisks and a space. (Naturally, if you use the included snippet, `side[TAB]`, that is what I give you.)
-
 * An **example block** delimiter can only have four or five equal signs (`=`), because otherwise TextMate can't distinguish it from a level 0 setext header delimiter (which is assumed to be longer). (Naturally, if you use the included snippet, `ex[TAB]`, that is what I give you.)
 
 * Similarly, a **passthrough block** delimiter can only have four or five plus signs (`+`), because otherwise TextMate can't distinguish it from a level 4 setext header delimiter (which is assumed to be longer). (Naturally, if you use the included snippet, `pass[TAB]`, that is what I give you.)
