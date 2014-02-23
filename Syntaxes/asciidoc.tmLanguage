@@ -1629,16 +1629,11 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>constant.comment.double-slash.asciidoc</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>string.unquoted.comment.asciidoc</string>
+							<string>punctuation.definition.comment.asciidoc</string>
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^(//)\s+(.*)$</string>
+					<string>^(//)\s+(.*)$\n?</string>
 					<key>name</key>
 					<string>comment.line.double-slash.asciidoc</string>
 				</dict>
