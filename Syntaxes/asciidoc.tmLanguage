@@ -214,10 +214,12 @@
 					</dict>
 					<key>comment</key>
 					<string>section template announced as literal, starts literal block</string>
+					<key>contentName</key>
+					<string>markup.raw.block.asciidoc</string>
 					<key>end</key>
-					<string>^\s*$</string>
+					<string>(?=^\s*$)</string>
 					<key>name</key>
-					<string>string.literal.block.asciidoc</string>
+					<string>meta.block.literal.asciidoc</string>
 					<key>patterns</key>
 					<array>
 						<dict>
