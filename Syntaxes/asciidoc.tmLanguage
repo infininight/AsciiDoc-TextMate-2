@@ -1995,22 +1995,27 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>markup.headingtitle.level.n.asciidoc</string>
+							<string>punctuation.definition.heading.asciidoc</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.section.asciidoc</string>
 						</dict>
 					</dict>
 					<key>match</key>
-					<string>^={1,5} (\w.*)$</string>
+					<string>^(={1,5}) (\w.*)$\n?</string>
 					<key>name</key>
-					<string>markup.heading.level.n.asciidoc</string>
+					<string>markup.heading.${1/(=)(=)?(=)?(=)?(=)?(=)?/${6:?6:${5:?5:${4:?4:${3:?3:${2:?2:1}}}}}/}.asciidoc</string>
 				</dict>
 				<key>setext_title</key>
 				<dict>
 					<key>comment</key>
 					<string>Alas, all we can do is mark the second line; TextMate cannot do double-line patterns</string>
 					<key>match</key>
-					<string>^(=|-|~|\^|\+){6,}\s*$</string>
+					<string>^(=|-|~|\^|\+){6,}\s*$\n?</string>
 					<key>name</key>
-					<string>constant.heading.setext.n.asciidoc</string>
+					<string>markup.heading.setext.n.asciidoc</string>
 				</dict>
 			</dict>
 		</dict>
