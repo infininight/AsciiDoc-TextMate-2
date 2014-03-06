@@ -1806,16 +1806,16 @@
 				<key>pagebreak</key>
 				<dict>
 					<key>match</key>
-					<string>^&lt;{3,}$</string>
+					<string>^&lt;{3,}$\n?</string>
 					<key>name</key>
-					<string>constant.pagebreak.asciidoc</string>
+					<string>meta.separator.pagebreak.asciidoc</string>
 				</dict>
 				<key>ruler</key>
 				<dict>
 					<key>match</key>
-					<string>^'{3,}$</string>
+					<string>^'{3,}$\n?</string>
 					<key>name</key>
-					<string>constant.ruler.asciidoc</string>
+					<string>meta.separator.ruler.asciidoc</string>
 				</dict>
 				<key>section_template</key>
 				<dict>
