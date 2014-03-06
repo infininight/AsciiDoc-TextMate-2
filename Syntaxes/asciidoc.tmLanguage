@@ -596,23 +596,82 @@
 				</dict>
 				<key>macro</key>
 				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>markup.underline.link.asciidoc</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control.directive.asciidoc</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.separator.key-value.asciidoc</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.arguments.begin.asciidoc</string>
+						</dict>
+						<key>6</key>
+						<dict>
+							<key>name</key>
+							<string>variable.parameter.asciidoc</string>
+						</dict>
+						<key>7</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.arguments.end.asciidoc</string>
+						</dict>
+					</dict>
 					<key>comment</key>
 					<string>there are other macro notations but I match only those that end in square brackets</string>
 					<key>match</key>
 					<string>(?x)
-					([a-zA-Z0-9][a-zA-Z0-9_]*)
-					:{1,2}
-					\S*
-					\[[^\]]*\]
+					(?:
+						((?:mailto|https?|image|callto|ftp|file|include)
+						(:{1,2})
+						\S*)
+					  | 
+  						([a-zA-Z0-9][a-zA-Z0-9_]*
+  						(:{1,2})
+  						\S*)
+					)
+					(\[)([^\]]*)(\])
 					</string>
 					<key>name</key>
-					<string>constant.character.macro.asciidoc</string>
+					<string>meta.macro.asciidoc</string>
 				</dict>
 				<key>passmacro</key>
 				<dict>
 					<key>captures</key>
 					<dict>
 						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>keyword.control.directive.asciidoc</string>
+						</dict>
+						<key>2</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.separator.key-value.asciidoc</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>meta.embedded.block.xml</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.arguments.begin.asciidoc</string>
+						</dict>
+						<key>5</key>
 						<dict>
 							<key>name</key>
 							<string>text.xml</string>
@@ -624,16 +683,23 @@
 								</dict>
 							</array>
 						</dict>
+						<key>6</key>
+						<dict>
+							<key>name</key>
+							<string>text.xml</string>
+						</dict>
 					</dict>
 					<key>match</key>
 					<string>(?x)
-					pass
-					:{1,2}
-					\S*
-					\[([^\]]*)\]
+					(
+						pass
+						(:{1,2})
+						\S*
+					)
+					((\[)([^\]]*)((\])))
 					</string>
 					<key>name</key>
-					<string>constant.character.macro.pass.asciidoc</string>
+					<string>meta.macro.pass.asciidoc</string>
 				</dict>
 				<key>replacement</key>
 				<dict>
