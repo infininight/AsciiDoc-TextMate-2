@@ -452,10 +452,23 @@
 		</dict>
 		<key>callout</key>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.constant.begin.asciidoc</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>punctuation.definition.constant.end.asciidoc</string>
+				</dict>
+			</dict>
 			<key>comment</key>
 			<string>has to be alone in repository (not in a group), as it operates in only a couple of highly specific places</string>
 			<key>match</key>
-			<string>(?&lt;!\\)&lt;\d+&gt;</string>
+			<string>(?&lt;!\\)(&lt;)\d+(&gt;)</string>
 			<key>name</key>
 			<string>constant.other.callout.asciidoc</string>
 		</dict>
@@ -819,6 +832,16 @@
 							<key>name</key>
 							<string>support.variable.attributelist.asciidoc</string>
 						</dict>
+						<key>begin</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.bold.begin.asciidoc</string>
+						</dict>
+						<key>end</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.bold.end.asciidoc</string>
+						</dict>
 						<key>inner</key>
 						<dict>
 							<key>name</key>
@@ -876,7 +899,7 @@
 					<string>(?x)
 								(?&lt;attlist&gt;\[[^\]]*?\])? # might start with an attribute list
 								(?&lt;!\\) # must not be preceded by escape
-								(?&lt;delim&gt;\*\*)(?&lt;inner&gt;.*?)\k&lt;delim&gt; # anything surrounded by double star
+								(?&lt;begin&gt;\*\*)(?&lt;inner&gt;.*?)(?&lt;end&gt;\*\*) # anything surrounded by double star
 							</string>
 					<key>name</key>
 					<string>markup.bold.asciidoc</string>
@@ -889,6 +912,16 @@
 						<dict>
 							<key>name</key>
 							<string>support.variable.attributelist.asciidoc</string>
+						</dict>
+						<key>begin</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.italic.begin.asciidoc</string>
+						</dict>
+						<key>end</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.italic.end.asciidoc</string>
 						</dict>
 						<key>inner</key>
 						<dict>
@@ -947,7 +980,7 @@
 					<string>(?x)
 								(?&lt;attlist&gt;\[[^\]]*?\])? # might start with attribute list
 								(?&lt;!\\) # must not be preceded by escape
-								(?&lt;delim&gt;__)(?&lt;inner&gt;.*?)\k&lt;delim&gt; # anything surrounded by double underline
+								(?&lt;begin&gt;__)(?&lt;inner&gt;.*?)(?&lt;end&gt;__) # anything surrounded by double underline
 							</string>
 					<key>name</key>
 					<string>markup.italic.asciidoc</string>
@@ -960,6 +993,16 @@
 						<dict>
 							<key>name</key>
 							<string>support.variable.attributelist.asciidoc</string>
+						</dict>
+						<key>begin</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.asciidoc</string>
+						</dict>
+						<key>end</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.asciidoc</string>
 						</dict>
 						<key>inner</key>
 						<dict>
@@ -1018,7 +1061,7 @@
 					<string>(?x)
 								(?&lt;attlist&gt;\[[^\]]*?\])? # might start with attribute list
 								(?&lt;!\\) # must not be preceded by escape
-								(?&lt;delim&gt;\+\+)(?&lt;inner&gt;.*?)\k&lt;delim&gt; # anything surrounded by double plus
+								(?&lt;begin&gt;\+\+)(?&lt;inner&gt;.*?)(?&lt;end&gt;\+\+) # anything surrounded by double plus
 							</string>
 					<key>name</key>
 					<string>string.literal.asciidoc</string>
@@ -1031,6 +1074,16 @@
 						<dict>
 							<key>name</key>
 							<string>support.variable.attributelist.asciidoc</string>
+						</dict>
+						<key>begin</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.asciidoc</string>
+						</dict>
+						<key>end</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.asciidoc</string>
 						</dict>
 						<key>inner</key>
 						<dict>
@@ -1093,7 +1146,7 @@
 					<string>(?x)
 								(?&lt;attlist&gt;\[[^\]]*?\])? # might start with attribute list
 								(?&lt;!\w|\\) # cannot be preceded by word character or escape
-								``(?&lt;inner&gt;(?!\s).*?(?&lt;!\s))'' # double backtick followed by non-space, anything, double-apostrophe preceded by non-space
+								(?&lt;begin&gt;``)(?&lt;inner&gt;(?!\s).*?(?&lt;!\s))(?&lt;end&gt;'') # double backtick followed by non-space, anything, double-apostrophe preceded by non-space
 								(?!\w) # cannot be followed by word character either
 							</string>
 					<key>name</key>
@@ -1107,6 +1160,16 @@
 						<dict>
 							<key>name</key>
 							<string>support.variable.attributelist.asciidoc</string>
+						</dict>
+						<key>begin</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.asciidoc</string>
+						</dict>
+						<key>end</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.asciidoc</string>
 						</dict>
 						<key>inner</key>
 						<dict>
@@ -1165,7 +1228,7 @@
 					<string>(?x)
 								(?&lt;attlist&gt;\[[^\]]*?\])? # might start with an attribute list (indeed, that is its purpose)
 								(?&lt;!\\) # must not be preceded by escape
-								(?&lt;delim&gt;\#\#)(?&lt;inner&gt;.*?)\k&lt;delim&gt; # anything surrounded by double hashes
+								(?&lt;begin&gt;\#\#)(?&lt;inner&gt;.*?)(?&lt;begin&gt;\#\#) # anything surrounded by double hashes
 							</string>
 					<key>name</key>
 					<string>string.unquoted.asciidoc</string>
@@ -1212,6 +1275,16 @@
 						<dict>
 							<key>name</key>
 							<string>support.variable.attributelist.asciidoc</string>
+						</dict>
+						<key>begin</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.bold.begin.asciidoc</string>
+						</dict>
+						<key>end</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.bold.end.asciidoc</string>
 						</dict>
 						<key>inner</key>
 						<dict>
@@ -1270,7 +1343,7 @@
 					<string>(?x)
 								(?&lt;attlist&gt;\[[^\]]*?\])? # might start with an attributes list
 								(?&lt;=\W)(?&lt;!\\) # must be preceded by a nonword character, and not by an escape
-								(?&lt;delim&gt;\*)(?&lt;inner&gt;(?!\s).*?(?&lt;!\s))\k&lt;delim&gt; # delimiter *, no space, anything, no space, delimiter...
+								(?&lt;begin&gt;\*)(?&lt;inner&gt;(?!\s).*?(?&lt;!\s))(?&lt;end&gt;\*) # delimiter *, no space, anything, no space, delimiter...
 								(?!\w) # ... and must be followed by nonword character
 							</string>
 					<key>name</key>
@@ -1284,6 +1357,16 @@
 						<dict>
 							<key>name</key>
 							<string>support.variable.attributelist.asciidoc</string>
+						</dict>
+						<key>begin</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.italic.begin.asciidoc</string>
+						</dict>
+						<key>end</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.italic.end.asciidoc</string>
 						</dict>
 						<key>inner</key>
 						<dict>
@@ -1342,7 +1425,7 @@
 					<string>(?x)
 								(?&lt;attlist&gt;\[[^\]]*?\])? # might be preceded by an attributes list
 								(?&lt;=\W)(?&lt;!\\) # must be preceded by a nonword character, and not by an escape
-								(?&lt;delim&gt;_)(?&lt;inner&gt;(?!\s).*?(?&lt;!\s))\k&lt;delim&gt; # delimiter underscore, nonspace, anything, nonspace, delimiter
+								(?&lt;begin&gt;_)(?&lt;inner&gt;(?!\s).*?(?&lt;!\s))(?&lt;end&gt;_) # delimiter underscore, nonspace, anything, nonspace, delimiter
 								(?!\w) # and must by followed by nonword character
 							</string>
 					<key>name</key>
@@ -1356,6 +1439,16 @@
 						<dict>
 							<key>name</key>
 							<string>support.variable.attributelist.asciidoc</string>
+						</dict>
+						<key>begin</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.asciidoc</string>
+						</dict>
+						<key>end</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.asciidoc</string>
 						</dict>
 						<key>inner</key>
 						<dict>
@@ -1414,7 +1507,7 @@
 					<string>(?x)
 								(?&lt;attlist&gt;\[[^\]]*?\])? # might start with attributes list
 								(?&lt;=\W)(?&lt;!\\) # must be preceded by a nonword character, and not by escape
-								(?&lt;delim&gt;\+)(?&lt;inner&gt;(?!\s).*?(?&lt;!\s))\k&lt;delim&gt; # delimiter plus, nonspace, anything, nonspace, delimiter
+								(?&lt;begin&gt;\+)(?&lt;inner&gt;(?!\s).*?(?&lt;!\s))(?&lt;end&gt;\+) # delimiter plus, nonspace, anything, nonspace, delimiter
 								(?!\w) # and must be followed by nonword character
 							</string>
 					<key>name</key>
@@ -1424,6 +1517,16 @@
 				<dict>
 					<key>captures</key>
 					<dict>
+						<key>begin</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.asciidoc</string>
+						</dict>
+						<key>end</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.asciidoc</string>
+						</dict>
 						<key>inner</key>
 						<dict>
 							<key>name</key>
@@ -1433,7 +1536,7 @@
 					<key>match</key>
 					<string>(?x)
 								(?&lt;!\w|\\) # must not be preceded by word character or escape
-								(?&lt;delim&gt;`)(?&lt;inner&gt;(?!\s).*?(?&lt;!\s))\k&lt;delim&gt; # delimiter backtick, nonspace, anything, nonspace, delimiter
+								(?&lt;begin&gt;`)(?&lt;inner&gt;(?!\s).*?(?&lt;!\s))(?&lt;end&gt;`) # delimiter backtick, nonspace, anything, nonspace, delimiter
 								(?!\w) # and must be followed by nonword character
 							</string>
 					<key>name</key>
@@ -1447,6 +1550,16 @@
 						<dict>
 							<key>name</key>
 							<string>support.variable.attributelist.asciidoc</string>
+						</dict>
+						<key>begin</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.asciidoc</string>
+						</dict>
+						<key>end</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.end.asciidoc</string>
 						</dict>
 						<key>inner</key>
 						<dict>
@@ -1505,7 +1618,7 @@
 					<string>(?x)
 								(?&lt;attlist&gt;\[[^\]]*?\])? # might start with attribute list (darned well better or why are we here)
 								(?&lt;=\W)(?&lt;!\\) # must be preceded by nonword character, and not by escape
-								(?&lt;delim&gt;\#)(?&lt;inner&gt;(?!\s).*?(?&lt;!\s))\k&lt;delim&gt; # delimiter hash, nonspace, anything, nonspace, delimiter
+								(?&lt;begin&gt;\#)(?&lt;inner&gt;(?!\s).*?(?&lt;!\s))(?&lt;end&gt;\#) # delimiter hash, nonspace, anything, nonspace, delimiter
 								(?!\w) # and must be followed by nonword character
 							</string>
 					<key>name</key>
@@ -1519,6 +1632,16 @@
 						<dict>
 							<key>name</key>
 							<string>support.variable.attributelist.asciidoc</string>
+						</dict>
+						<key>begin</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.asciidoc</string>
+						</dict>
+						<key>end</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.asciidoc</string>
 						</dict>
 						<key>inner</key>
 						<dict>
@@ -1594,6 +1717,16 @@
 						<dict>
 							<key>name</key>
 							<string>support.variable.attributelist.asciidoc</string>
+						</dict>
+						<key>begin</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.asciidoc</string>
+						</dict>
+						<key>end</key>
+						<dict>
+							<key>name</key>
+							<string>punctuation.definition.string.begin.asciidoc</string>
 						</dict>
 						<key>inner</key>
 						<dict>
