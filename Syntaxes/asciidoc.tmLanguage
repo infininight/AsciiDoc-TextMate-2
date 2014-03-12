@@ -1581,7 +1581,7 @@
 					<string>(?x)
 								(?&lt;attlist&gt;\[[^\]]*?\])? # might start with attribute list
 								(?&lt;!\\) # must not be preceded by escape
-								(?&lt;inner&gt;~.*?~) # twiddle anything twiddle
+								(?&lt;begin&gt;~)(?&lt;inner&gt;.*?)(?&lt;end&gt;~) # twiddle anything twiddle
 							</string>
 					<key>name</key>
 					<string>string.subscript.asciidoc</string>
@@ -1656,7 +1656,7 @@
 					<string>(?x)
 								(?&lt;attlist&gt;\[[^\]]*?\])? # might start with attribute list
 								(?&lt;!\\) # no preceding escape
-								(?&lt;inner&gt;\^.*?\^) # caret anything caret
+								(?&lt;begin&gt;\^)(?&lt;inner&gt;.*?)(?&lt;end&gt;\^) # caret anything caret
 							</string>
 					<key>name</key>
 					<string>string.superscript.asciidoc</string>
