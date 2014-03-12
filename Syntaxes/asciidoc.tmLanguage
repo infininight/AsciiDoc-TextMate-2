@@ -1064,7 +1064,7 @@
 								(?&lt;begin&gt;\+\+)(?&lt;inner&gt;.*?)(?&lt;end&gt;\+\+) # anything surrounded by double plus
 							</string>
 					<key>name</key>
-					<string>string.literal.asciidoc</string>
+					<string>string.other.literal.asciidoc</string>
 				</dict>
 				<key>double_quote</key>
 				<dict>
@@ -1231,7 +1231,7 @@
 								(?&lt;begin&gt;\#\#)(?&lt;inner&gt;.*?)(?&lt;begin&gt;\#\#) # anything surrounded by double hashes
 							</string>
 					<key>name</key>
-					<string>string.unquoted.asciidoc</string>
+					<string>string.other.unquoted.asciidoc</string>
 				</dict>
 				<key>passthru</key>
 				<dict>
@@ -1511,7 +1511,7 @@
 								(?!\w) # and must be followed by nonword character
 							</string>
 					<key>name</key>
-					<string>string.literal.asciidoc</string>
+					<string>string.other.literal.asciidoc</string>
 				</dict>
 				<key>single_literal_nopassthru</key>
 				<dict>
@@ -1540,7 +1540,7 @@
 								(?!\w) # and must be followed by nonword character
 							</string>
 					<key>name</key>
-					<string>string.literal.nopassthru.asciidoc</string>
+					<string>string.other.literal.nopassthru.asciidoc</string>
 				</dict>
 				<key>single_unquoted</key>
 				<dict>
@@ -1707,7 +1707,7 @@
 								(?&lt;begin&gt;~)(?&lt;inner&gt;.*?)(?&lt;end&gt;~) # twiddle anything twiddle
 							</string>
 					<key>name</key>
-					<string>string.subscript.asciidoc</string>
+					<string>string.other.subscript.asciidoc</string>
 				</dict>
 				<key>superscript</key>
 				<dict>
@@ -1792,7 +1792,7 @@
 								(?&lt;begin&gt;\^)(?&lt;inner&gt;.*?)(?&lt;end&gt;\^) # caret anything caret
 							</string>
 					<key>name</key>
-					<string>string.superscript.asciidoc</string>
+					<string>string.other.superscript.asciidoc</string>
 				</dict>
 			</dict>
 		</dict>
