@@ -513,18 +513,18 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.constant.begin.asciidoc</string>
+							<string>punctuation.definition.biblioanchor.begin.asciidoc</string>
 						</dict>
 						<key>2</key>
 						<dict>
 							<key>name</key>
-							<string>punctuation.definition.constant.end.asciidoc</string>
+							<string>punctuation.definition.biblioanchor.end.asciidoc</string>
 						</dict>
 					</dict>
 					<key>match</key>
 					<string>(?&lt;!\[)(\[\[\[).*?(\]\]\])(?!\])</string>
 					<key>name</key>
-					<string>constant.other.reference.biblioanchor.asciidoc</string>
+					<string>storage.type.reference.biblioanchor.asciidoc</string>
 				</dict>
 				<key>entity</key>
 				<dict>
@@ -551,23 +551,18 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>constant.character.index2.left.asciidoc</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>string.unquoted.indexterm.asciidoc</string>
+							<string>punctuation.definition.indexterm.begin.asciidoc</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>constant.character.index2.right.asciidoc</string>
+							<string>punctuation.definition.indexterm.end.asciidoc</string>
 						</dict>
 					</dict>
 					<key>match</key>
 					<string>(?&lt;!\()(\({2})([^\(\s].*?)(\){2})(?!\))</string>
 					<key>name</key>
-					<string>meta.indexterm.double.asciidoc</string>
+					<string>variable.other.indexterm.double.asciidoc</string>
 				</dict>
 				<key>index3</key>
 				<dict>
@@ -576,23 +571,18 @@
 						<key>1</key>
 						<dict>
 							<key>name</key>
-							<string>constant.character.index3.left.asciidoc</string>
-						</dict>
-						<key>2</key>
-						<dict>
-							<key>name</key>
-							<string>string.unquoted.indexterm.asciidoc</string>
+							<string>punctuation.definition.indexterm.begin.asciidoc</string>
 						</dict>
 						<key>3</key>
 						<dict>
 							<key>name</key>
-							<string>constant.character.index3.right.asciidoc</string>
+							<string>punctuation.definition.indexterm.end.asciidoc</string>
 						</dict>
 					</dict>
 					<key>match</key>
 					<string>(?&lt;!\()(\({3})([^\(].*?)(\){3})(?!\))</string>
 					<key>name</key>
-					<string>meta.indexterm.triple.asciidoc</string>
+					<string>variable.other.indexterm.triple.asciidoc</string>
 				</dict>
 				<key>macro</key>
 				<dict>
